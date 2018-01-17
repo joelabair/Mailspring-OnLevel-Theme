@@ -13,7 +13,7 @@ stylesheets can call `@import "ui-variables";` and reference it.
 
 /*
 After changing variables to set a base for our theme, we can use
-specific, narrowly-scoped CSS rules to change other things. 
+specific, narrowly-scoped CSS rules to change other things.
 
 Tip: You can use the Developer Tools in Mailspring and "Inspect
 Element" to identify the DOM elements and styles you want to override.
@@ -28,7 +28,30 @@ background color.)
   box-shadow: none;
 }
 
-.thread-icon:not(.thread-icon-unread):not(.thread-icon-star) {
+//.thread-icon:not(.thread-icon-unread):not(.thread-icon-star) {
+//  -webkit-filter: invert(100%);
+//}
+//img.content-dark {
+//  -webkit-filter: invert(100%);
+//}
+//img.content-light {
+//  -webkit-filter: invert(100%);
+//}
+//
+//.mail-label {
+//  -webkit-filter: contrast(110%) brightness(85%);
+//}
+//
+//#message-list .message-item-wrap .message-item-white-wrap {
+//  box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.28),
+//    0 1px 1.5px rgba(255, 255, 255, 0.08);
+//}
+//
+//.thread-list .list-item:not(.unread):not(.selected):not(.focused) {
+//  color: #aaa;
+//}
+
+.thread-icon:not(.thread-icon-unread) {
   -webkit-filter: invert(100%);
 }
 img.content-dark {
@@ -38,8 +61,44 @@ img.content-light {
   -webkit-filter: invert(100%);
 }
 
-.mail-label {
-  -webkit-filter: contrast(110%) brightness(85%);
+.btn {
+    background-image: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: 0.3s ease all;
+    cursor: pointer;
+    &:hover {
+        background: #111;
+    }
+}
+
+.sheet-toolbar {
+    border-bottom: 6px solid #111;
+}
+
+.sheet-toolbar-container {
+    background: #313131;
+    background-image: none;
+}
+
+.flexbox-handle-horizontal div {
+    border: none;
+}
+
+.search-bar .menu .header-container input {
+    border: none;
+    background-color: #333;
+}
+
+.column-ThreadList {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    z-index: 9;
+}
+
+.column-RootSidebar {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    z-index: 10;
 }
 
 #message-list .message-item-wrap .message-item-white-wrap {
@@ -47,6 +106,44 @@ img.content-light {
     0 1px 1.5px rgba(255, 255, 255, 0.08);
 }
 
-.thread-list .list-item:not(.unread):not(.selected):not(.focused) {
-  color: #aaa;
+.btn-feedback {
+    background-image: none;
+    background-color: #FF7043;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.thread-icon:not(.thread-icon-unread) {
+  -webkit-filter: brightness(10) grayscale(1);
+}
+
+.thread-list .thread-icon.thread-icon-unread, .draft-list .thread-icon.thread-icon-unread {
+    background-image: none;
+    background-color: #9C27B0;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    top: -7px;
+    left: 7px;
+}
+
+.sheet-toolbar {
+	border-bottom: 3px solid #111;
+}
+
+#message-list .message-item-area .iframe-container {
+    background-color: #fff;
+}
+
+.composer-inner-wrap .compose-body {
+	background-color: #fff;
+}
+
+.list-container .list-item {
+	color: #dedede;
+}
+
+body.is-blurred .list-container .list-item.focused {
+    background: rgba(157, 157, 157, 0.25);
 }
